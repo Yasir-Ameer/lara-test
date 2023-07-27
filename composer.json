@@ -48,7 +48,7 @@
             "@php artisan key:generate --ansi"
         ],
         "post-migrate-cmd": [
-            "@php artisan migrate"
+            "@php artisan migrate --force"
         ]
     },
     "extra": {
