@@ -24,6 +24,7 @@ import {
     OrdersMajor,
     ConversationMinor,
   } from '@shopify/polaris-icons';
+import axios from 'axios';
   import {useState, useCallback, useRef} from 'react';
 
   function Home() {
@@ -73,6 +74,8 @@ import {
       setIsDirty(false);
       setToastActive(true);
       setStoreName(defaultState.current.nameFieldValue);
+
+
     }, [emailFieldValue, nameFieldValue]);
     const handleNameFieldChange = useCallback((value) => {
       setNameFieldValue(value);
@@ -178,14 +181,14 @@ import {
         <Navigation.Section
           items={[
             {
-              label: 'Back to Shopify',
+              label: 'Back to Home',
               icon: ArrowLeftMinor,
             },
           ]}
         />
         <Navigation.Section
           separator
-          title="Jaded Pixel App"
+          title="Kashif Inventory"
           items={[
             {
               label: 'Dashboard',
@@ -193,7 +196,7 @@ import {
               onClick: toggleIsLoading,
             },
             {
-              label: 'Jaded Pixel Orders',
+              label: 'Orders',
               icon: OrdersMajor,
               onClick: toggleIsLoading,
             },
@@ -219,7 +222,7 @@ import {
           {skipToContentTarget}
           <Layout.AnnotatedSection
             title="Account details"
-            description="Jaded Pixel will use this as your account information."
+            description="This as your account information."
           >
             <LegacyCard sectioned>
               <FormLayout>
@@ -338,7 +341,7 @@ import {
           }}
         >
           <Frame
-            logo={logo}
+            // logo={logo}
             topBar={topBarMarkup}
             navigation={navigationMarkup}
             showMobileNavigation={mobileNavigationActive}
